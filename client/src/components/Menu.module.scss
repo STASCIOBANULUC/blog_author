@@ -1,0 +1,38 @@
+.menu {
+  display: flex;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.item {
+  position: relative;
+  margin-right: 10px;
+
+  color: brown;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 0px;
+    height: 2px;
+    margin-bottom: -4px;
+    background-color: brown;
+    transition: width 0.4s;
+  }
+
+  &.active::before {
+    width: 100%;
+    background-color: brown;
+  }
+
+  &:hover {
+    color: #00d9db;
+  }
+}
