@@ -9,7 +9,6 @@ import createStore from './store'
 
 const store = createStore();
 
-console.log(state)
 ReactDOM.render( 
 <React.StrictMode >
     <Router >
