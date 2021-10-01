@@ -18,6 +18,7 @@ class Verse(models.Model):
     title = models.CharField(max_length=200, verbose_name="Названия стиха")
     text = models.TextField(verbose_name="Текст стиха")
     consecrated = models.CharField(max_length=200, verbose_name="Кому посвящається")
+    date_of_creation = models.CharField(max_length=50, verbose_name='Дата написания')
     date_add = models.DateTimeField(auto_now_add=True, verbose_name="Дата добавления стиха")
     publish = models.BooleanField(verbose_name="Опубликовать")
     slug = models.SlugField(verbose_name="url")
