@@ -3,7 +3,7 @@ import axios from 'axios';
 import style from './Poetry.module.scss';
 import classNames from 'classnames';
 import { Best, Menu } from '../components';
-import flavor1 from '../assets/flavor1.jpg';
+import flavor1 from '../assets/pow.jpeg';
 
 //decorator
 import { useSelector } from 'react-redux';
@@ -61,8 +61,11 @@ function Poetry({ loading, setLoading, appState, props }) {
   return (
     <section className={classNames(style.poetry, 'poetry')}>
       <div className={style.meta}>
-        <img className={style.img} src={flavor1} alt="bg" />
+
         <div className={classNames(style.headline, 'title')}>Поэзия</div>
+        <div className={style.imgInner}>
+        <img className={style.img} src={flavor1} alt="bg" />
+        </div>
       </div>
       <div className={style.topMenu}></div>
 

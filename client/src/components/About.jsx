@@ -2,7 +2,7 @@ import React from 'react';
 // import { Route } from 'react-router-dom';
 import style from './About.module.scss';
 import about from '../assets/about.jpg';
-import abouttop from '../assets/new.jpg';
+import abouttop from '../assets/pow1.jpeg';
 // import { Site } from './';
 
 const About = () => {
@@ -10,7 +10,9 @@ const About = () => {
     <section id="about" className={style.about}>
       <div className={style.meta}>
         <div className={style.title}>Обо мне</div>
+        <div className={style.imgInner}>
         <img className={style.imgBg} src={abouttop} alt="bg" />
+        </div>
       </div>
       <div className={style.inner}>
         <div className="container">
