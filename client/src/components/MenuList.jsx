@@ -3,7 +3,7 @@ import style from './Menu.module.scss';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
-const Menu = ({multiSelect = false, items, activeId, setActiveId}) => {
+const Menu = ({multiSelect = false, items, activeId, setActiveId, setActiveWhomeItem}) => {
   const [selection, setSelection] = React.useState([]);
 
   function handleOnClick(item) {
@@ -37,7 +37,6 @@ function removeOverflow(){
   return (
     <ul className={classNames(style.menu, "wrapper-menu")}>
       {items && items.map((item, index) => (
-        <Link key={item.id} to={`/${item.link}`}>
           <li
             className={classNames(style.item, item.id === activeId ? style.active : '')}
             key={item.id}>
@@ -47,11 +46,11 @@ function removeOverflow(){
               onClick={(e) => {
                 handleOnClick(item);
                 clickItem(index);
+                setActiveWhomeItem(item.value)
               }}>
               <span className={classNames(style.left)}>{item.value}</span>
             </div>
           </li>
-        </Link>
       ))}
     </ul>
   );

@@ -12,4 +12,4 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
 class VerseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Verse
-        fields = ['category', 'title', 'text', 'consecrated', 'date_add', 'publish', 'slug']
+        fields = ['category', 'title', 'text', 'consecrated', 'date_of_creation', 'date_add', 'publish', 'slug']

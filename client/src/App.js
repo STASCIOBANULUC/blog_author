@@ -14,8 +14,6 @@ const App = (props) => {
   // const { setWhomeMenu } = props
   const {poetry, isReady } = props.poetry
   // const[isContent, setIsContent] = React.useState([]);
-
-  const [isLoading, setIsLoading] = React.useState(false);
   const [isWhomeMenu, setIsWhomeMenu] = React.useState([]);
 
   React.useEffect(() => {
@@ -23,7 +21,6 @@ const App = (props) => {
     async function fetchData() {
         const componentWillMount = await
             //там где then используется ECMAScript
-//            axios.get('http://poetry.mocklab.io/content')
             axios.get('http://127.0.0.1:8000/verse')
 
             setPoetry(componentWillMount.data);
@@ -36,14 +33,13 @@ const mapStateToProps = ({poetry: {items}}) => ({
   isReady: poetry.isReady
 })
 
-console.log(props.appState)
   return (
     <div className="wrapper">
       <Header />
       {!isReady ? (
         <Preloader isLoading={isReady} />
       ) : (
-        <Home isLoading={isReady} setIsLoading={setIsLoading} appState={props.appState}/>
+        <Home appState={props.appState}/>
       )}
     </div>
   );
