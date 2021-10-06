@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from author_backend.api.serializers import CategorySerializer, VerseSerializer
+from author_backend.api.serializers import CategorySerializer, VerseSerializer, ConsecratedSerializer
 from author_backend.models import Category, Verse
 
 
@@ -14,5 +14,12 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class VerseViewSet(viewsets.ModelViewSet):
     queryset = Verse.objects.all().order_by('-date_add')
     serializer_class = VerseSerializer
+    pagination_class = None
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
+
+class ConsecratedViewSet(viewsets.ModelViewSet):
+    queryset = Verse.objects.all()
+    serializer_class = ConsecratedSerializer
     pagination_class = None
     permission_classes = (IsAuthenticatedOrReadOnly,)
