@@ -24,6 +24,7 @@ const App = (props) => {
             axios.get('http://127.0.0.1:8000/verse')
 
             setPoetry(componentWillMount.data);
+            console.log(componentWillMount.data)
     }
     fetchData();
 }, []);

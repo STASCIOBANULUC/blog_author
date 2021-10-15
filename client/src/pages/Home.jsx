@@ -4,6 +4,7 @@ import { Poetry } from './index';
 import { Top, About } from '../components/';
 import { Gallery } from '.';
 
+
 import style from './Home.module.scss';
 
 function Home({ appState }) {

@@ -25,11 +25,9 @@ export default function Gallery() {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = items.slice(indexOfFirstPost, indexOfLastPost);
-  console.log(currentPosts);
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  console.log(paginate);
   return (
     <div className={style.gallery}>
     <div className={style.meta}>
@@ -68,7 +66,6 @@ export default function Gallery() {
         />
       </div>
 
-      <div className={classNames(style.desc, 'desc')}>Хобби</div>
     </div>
   );
 }
