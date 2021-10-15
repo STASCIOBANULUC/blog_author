@@ -3,18 +3,31 @@ import style from './Poetry.module.scss';
 import classNames from 'classnames';
 import { Best, MenuList } from '../components';
 import flavor1 from '../assets/pow.jpeg';
+import axios from 'axios';
 
 //decorator
 import { useSelector } from 'react-redux';
 
 function Poetry({ loading, setLoading, appState, props}) {
   
-  const [whomeItem, setWhomeItem] = React.useState(appState.whome);
+  const [whomeItem, setWhomeItem] = React.useState([]);
   const [activeWhomeItem, setActiveWhomeItem] = React.useState('Все стихи');
 
   const [activeId, setActiveId] = React.useState(0);
   const store = useSelector((store) => store);
   const [contentItem, setContentItem] = React.useState(store.poetry.poetry);
+
+//   React.useEffect(() => {
+
+//     async function fetchData() {
+//         const componentWillMount = await
+//             //там где then используется ECMAScript
+//             axios.get('http://127.0.0.1:8000/concecrated')
+//             setWhomeItem(componentWillMount.data);
+//             console.log(componentWillMount.data)
+//     }
+//     fetchData();
+// }, []);
 
 //
 //   const getMenu = () => {
